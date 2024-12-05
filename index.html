@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Anniversary</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Carattere&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Carattere', sans-serif;  
+      background: linear-gradient(to bottom, #f7c6d1, #fff); 
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      color: #f06292; 
+      font-size: 2.5rem;
+      margin: 20px 0;
+    }
+
+    .page-container {
+      border: 5px solid #f06292; 
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px auto;
+      display: inline-block; 
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+      position: relative;
+      width: 90%;
+      max-width: 600px;
+    }
+
+    /* ปรับขนาดและจัดรูปให้พอดีกับกรอบ */
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover; 
+      border-radius: 10px; 
+      margin-bottom: 20px;
+    }
+
+    /* ปรับขนาดรูปในหน้า 2 */
+    #page2 img {
+      max-width: 70%; /* ลดขนาดรูปให้เล็กลง */
+      height: auto;
+      margin: 0 auto; /* จัดให้รูปอยู่ตรงกลาง */
+      display: block; /* ให้เป็นบล็อกเพื่อใช้ margin auto */
+    }
+
+    p {
+      font-size: 1.5rem;
+      color: #000;
+      margin: 20px;
+    }
+
+    .message {
+      color: #f06292;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      color: white;
+      background: #f06292;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+      margin: 20px;
+    }
+
+    button:hover {
+      background: #e91e63;
+    }
+
+    a {
+      text-decoration: underline;
+      font-size: 1.5rem;
+      color: black; 
+    }
+
+    a:hover {
+      color: #555;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    #yesBtn {
+      transition: transform 0.5s ease-in-out;
+    }
+
+    #page2 h1 {
+      font-family: 'Agbalumo', sans-serif; 
+    }
+
+    #page2 p {
+      font-family: 'Agbalumo', sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="page1" class="page-container">
+    <img src="file:///C:/Users/plccx/Downloads/IMG_2889.JPG" alt="Anniversary Image"> <!-- รูปภาพในหน้า 1 -->
+    <h1>คุณวิราศิณีครับ....ผมมีอะไรอยากจะบอกกับคุณ</h1>
+    <p>"คุณจะเปิดหรือไม่เปิด"</p>
+    <button id="yesBtn" onclick="goToNextPage()">Yes</button>
+    <button id="noBtn" onclick="stayHere()">No</button>
+  </div>
+
+  <div id="page2" class="page-container hidden">
+    <div class="content">
+      <img src="file:///C:/Users/plccx/Downloads/1714074160255.jpg" alt="Anniversary Image"> <!-- รูปภาพในหน้า 2 -->
+    </div>
+
+    <h1>Happy anniversary 1 years nababe!! 💐</h1>
+    <p class="message">ขอบคุณที่อยู่ข้างๆกันมาตลอดนะครับบ</p>
+    <p><a href="https://youtu.be/Oz6LL1o9Fog?si=LnYBhcLN_kiIDfY2" target="_blank">ลองเอามือจิ้มหน่อยย</a></p>
+  </div>
+
+  <script>
+    let scaleFactor = 1;
+
+    function goToNextPage() {
+      document.getElementById("page1").style.display = "none";
+      document.getElementById("page2").style.display = "block";
+    }
+
+    function stayHere() {
+      scaleFactor += 0.2;
+      const yesButton = document.getElementById("yesBtn");
+      yesButton.style.transform = `scale(${scaleFactor})`;
+    }
+  </script>
+
+</body>
+</html>
